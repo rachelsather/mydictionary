@@ -5,16 +5,16 @@ phonebook = {'Chris':'555−1111',
              'Joanne':'555−3333'}
 
 
-
+'''
 print()
 print('*****  start section 1 - print dictionary ********')
 print()
 
 print(phonebook)
-print(type(phonebook)) #Type lets us know what we're dealing with
+print(type(phonebook)) #Type lets us know what we're dealing with (dict)
+
 phone = phonebook ['Chris'] #key error means that key does not exist in the dictionairy
 print(phone)
-
 
 print(len(phonebook)) #how many elements are in the phonebook
 
@@ -43,7 +43,7 @@ print()
 name = 'Chris'
 
 if name in phonebook:
-    print(phonebook[name])
+    print(phonebook[name]) #returns the value, not the key
 else:
     print(name, 'not found')
 
@@ -78,8 +78,8 @@ print('*****  start section 4 - delete/remove from dictionary ********')
 print()
 
 
-#del phonebook['Chris']
-#print(phonebook)
+del phonebook['Chris']
+print(phonebook)
 
 
 print()
@@ -87,7 +87,7 @@ print('*****  end section 4 ********')
 print()
 
 
-
+'''
 
 print()
 print('*****  start section 5 - iterate through keys, values, items ********')
@@ -105,7 +105,7 @@ for k,v in phonebook.items(): #items methods allows us to access both key and va
     print('key:', k, '    value: ', v)
 
 for tuple in phonebook.items(): #immutable objects - you can't change them
-        print(tuple)
+     print(tuple)
 
 
 print()
@@ -113,7 +113,7 @@ print('*****  end section 5 ********')
 print()
 
 
-
+'''
 
 print()
 print('*****  start section 6 - using get and clear ********')
@@ -138,10 +138,10 @@ print('*****  start section 7 - using pop method ********')
 print()
 
 
-#remove = phonebook.pop('Chris', 'key not found') #pops it out of the dictionairy
+remove = phonebook.pop('Chris', 'key not found') #pops it out of the dictionairy
 
-#print(remove)
-#print(phonebook)
+print(remove)
+print(phonebook)
 
 
 print()
@@ -156,10 +156,10 @@ print('*****  start section 8 - using popitem ********')
 print()
 
 
-#a = phonebook.popitem() #random part does not work; it just picks the last value
+a = phonebook.popitem() #random part does not work; it just picks the last value
 
-#print(a)
-#print(phonebook)
+print(a)
+print(phonebook)
 
 
 print()
@@ -187,5 +187,4 @@ print()
 print('*****  end section 9 ********')
 print()
 
-
-
+'''

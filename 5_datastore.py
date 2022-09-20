@@ -18,7 +18,7 @@ room-number,use,sq-ft,price
 
 
 
-datastore = { "medical":[
+datastore = { "medical":[ #list of dictionairies
       { "room-number": 100,
         "use": "reception",
         "sq-ft": 50,
@@ -47,3 +47,10 @@ datastore = { "medical":[
 
       ]
 }
+
+
+outfile = open('retail_space2.csv', 'w')
+outfile.write('room-number,use,sq-ft,price\n')
+
+for i in datastore['medical']: #i is a dictionairy
+  outfile.write(str(i['room-number']) + ',' + i['use'] + ',' + str(i['sq-ft']) + ',' + str(i['price']) + '\n')
