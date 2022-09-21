@@ -1,7 +1,5 @@
 infile = open('info_security.txt', 'r')
-
-file_contents = infile.read()
-print(file_contents)
+encrypted = infile.read()
 
 codes = {'A':'%','a':'9','B':'@','b':'#','C':'!','c':'3','D':'$','d':'2',
         'E':'7','e':'^','F':'*','f':'8','G':'/','g':'P','H':'1','h':'+',
@@ -13,15 +11,9 @@ codes = {'A':'%','a':'9','B':'@','b':'#','C':'!','c':'3','D':'$','d':'2',
 
 outfile = open('encrypted.txt', 'w')
 
-
-count = 0
-for letter in infile:
-        l = letter.split()
-        outfile.write(l, codes[infile])
-count += 1
-
-
-for i in infile:
-    for value in codes.values():
-        outfile.write(value)
-    i + 1
+for a,b in codes.items():
+    search = a
+    replace = b
+    encrypted=encrypted.replace(search,replace)
+    
+outfile.write(encrypted)

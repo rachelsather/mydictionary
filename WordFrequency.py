@@ -1,15 +1,15 @@
 infile = ('sometext.txt', 'r')
 print(type(infile))
 
-dict = {}
+special_characters = [',','.']
 
-
-
-for record in infile:
-    dict['word'] = {record[1] : "Fido", "cat": "Sox"}
+with open('sometext.txt') as text:
+    for line in text:
+        for i in special_characters:
+            line = line.replace(i,'')
+        words = line.split()
+        specificwords = dict((word, words.count(word))for word in set (words))
 
 print('Word,', 'Frequency')
-
-for k,v in dict.items:
-    print(k,v)
+print(specificwords)
 

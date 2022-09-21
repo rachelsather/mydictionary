@@ -14,7 +14,7 @@ sampleDict = {
 }
 
 print(sampleDict['class']['student']['marks']['history'])
-
+'''
 
 # 2) Add 2 inches to the son's height.
 
@@ -44,3 +44,4 @@ dict={"name": "Plato", "country": "Ancient Greece", "born": -427, "teacher": "So
 
 dict['work'] = ["Apology", "Phaedo", "Republic", "Symposium"]
 print(dict)
+'''
