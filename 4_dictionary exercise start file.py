@@ -1,18 +1,16 @@
+
+
 # This program uses a dictionary as a deck of cards.
 
 def main():
     # Create a deck of cards.
-    deck = create_deck
+    deck = create_deck()
 
-        # Get the number of cards to deal.
+    # Get the number of cards to deal.
     num_cards = int(input('How many cards should I deal? '))
 
-
-        # Deal the cards.
+    # Deal the cards.
     deal_cards(deck, num_cards)
-
-    
-    
 
 # The create_deck function returns a dictionary
 # representing a deck of cards.
@@ -42,42 +40,54 @@ def create_deck():
             '7 of Diamonds':7, '8 of Diamonds':8, '9 of Diamonds':9,
             '10 of Diamonds':10, 'Jack of Diamonds':10,
             'Queen of Diamonds':10, 'King of Diamonds': 10}
-
+    print(type(deck))
     # Return the deck.
-    return deck #value-returning function
-
-
+    return deck
 
 # The deal_cards function deals a specified number of cards
 # from the deck.
 
-def deal_cards(deck, number): #uses two arguments; 
+def deal_cards(deck, number):
     # Initialize an accumulator for the hand value.
-    handValue = 0
-    
-    
+    hand_value = 0
 
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
-    if number > 52:
-        number = 52
-    
-    
+    if number > len(deck):
+        number = len(deck)
+
 
     # Deal the cards and accumulate their values.
-    import random
     for count in range(number):
-        card = random.choice(list(deck))
+        card, value = deck.popitem()
         print(card)
+        hand_value += value
+
+
+    # alternate way since popitem does not currently work
+    import random
+    
+    list_of_keys = []
+
+    for key in deck:
+        list_of_keys.append(key)
+
+    print(list_of_keys)
+
+    for count in range(number):
+        card = random.choice(list_of_keys)
         value = deck[card]
-        handValue += value
+        print(card)
+        
+        hand_value += value
+        
+        list_of_keys.remove(card)
+        del deck[card]
         
     
 
     # Display the value of the hand.
-    print('the value of the hand is',handValue)
-    
-    
+    print('Value of this hand:', hand_value)
 
 # Call the main function.
 main()

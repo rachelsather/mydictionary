@@ -10,6 +10,6 @@ with open('sometext.txt') as text:
         words = line.split()
         specificwords = dict((word, words.count(word))for word in set (words))
 
-print('Word,', 'Frequency')
+print('Word : Frequency')
 print(specificwords)
 
